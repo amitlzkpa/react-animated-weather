@@ -10,7 +10,10 @@ function setIcon(icon, animate, skyconIcon, canvas) {
 }
 
 const ReactAnimatedWeather = ({
-  icon, color, size, animate
+  icon,
+  color = 'black',
+  size = 64,
+  animate = true
 }) => {
   const skyconCanvas = useRef(null);
 
@@ -25,12 +28,6 @@ const ReactAnimatedWeather = ({
   }, [icon, color, animate, size]);
 
   return <canvas ref={skyconCanvas} width={size} height={size} />;
-};
-
-ReactAnimatedWeather.defaultProps = {
-  animate: true,
-  size: 64,
-  color: 'black'
 };
 
 ReactAnimatedWeather.propTypes = {
